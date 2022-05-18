@@ -1,0 +1,37 @@
+ki@kenoMacBook-Air ~ % docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+7050e35b49f5: Pull complete
+Digest: sha256:80f31da1ac7b312ba29d65080fddf797dd76acfb870e677f390d5acba9741b17
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!以下略
+
+dockerで大事なのはイメージとコンテナ。
+dockerでやることはイメージとコンテナに対する作業
+アプリコード、dockerfile⇨作成⇨イメージ⇨作成、起動⇨コンテナ
+
+アプリケーションのコードを用意する
+まずDocumentsの下でdockerというディレクトリをつくる
+ki@kenoMacBook-Air ~ % ls
+Desktop		Downloads	Movies		Pictures	docker
+Documents	Library		Music		Public
+ki@kenoMacBook-Air ~ % cd Documents
+ki@kenoMacBook-Air Documents % cd docker
+ki@kenoMacBook-Air docker % pwd
+/Users/ki/Documents/docker
+
+docker image build:イメージを作るコマンド
+ki@kenoMacBook-Air docker % docker image build -t sample/webrick:latest .
+[+] Building 0.1s (2/2) FINISHED
+ => [internal] load build definition from Dockerfile                                            0.1s
+ => => transferring dockerfile: 36B                                                             0.0s
+ => [internal] load .dockerignore                                                               0.1s
+ => => transferring context: 2B                                                                 0.0s
+failed to solve with frontend dockerfile.v0: failed to create LLB definition: the Dockerfile cannot be empty
+
+docker image ls:イメージを作れたか確認する
+ki@kenoMacBook-Air docker % docker image ls
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+hello-world   latest    46331d942d63   8 weeks ago   9.14kB
+うーん。sample/webrickがない、、、
