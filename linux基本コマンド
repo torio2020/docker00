@@ -1,0 +1,54 @@
+ls:今自分がディレクトリやファイルの一覧
+ki@kenoMacBook-Air ~ % ls
+Desktop		Downloads	Movies		Pictures
+Documents	Library		Music		Public
+
+pwd:今自分がいるディレクトリが表示される
+ki@kenoMacBook-Air ~ % pwd
+/Users/ki
+
+cd:ディレクトリ移動
+ki@kenoMacBook-Air ~ % cd Documents
+ki@kenoMacBook-Air Documents % pwd
+/Users/ki/Documents
+
+mkdir:ディレクトリを作る
+dockerという名前のディレクトリを作る
+ki@kenoMacBook-Air Documents % mkdir docker
+ki@kenoMacBook-Air Documents % ls
+docker
+
+touch:新規の空ファイルを作る
+tmpというファイルを作る
+ki@kenoMacBook-Air docker % touch tmp
+ki@kenoMacBook-Air docker % ls
+tmp
+
+echo:
+tmpの中にHelloという文字列を書き込む 
+>:これが書き込むということ
+ki@kenoMacBook-Air docker % echo 'Hello' > tmp
+
+cat:ファイルの中身を確認する
+ki@kenoMacBook-Air docker % cat tmp
+Hello
+
+less:これもファイルの中身を確認するが確認の仕方が違う
+ファイルの中身が長いとき便利。終了するときはq
+ki@kenoMacBook-Air ~ % less tmp
+Hello
+tmp (END)
+
+mv:ファイルの位置を変えたり、名前を変える変える
+ki@kenoMacBook-Air ~ % move tmp tmp1
+zsh: command not found: move
+ki@kenoMacBook-Air ~ % mv tmp tmp1
+
+rm:ファイルを削除するコマンド
+ki@kenoMacBook-Air ~ % ls
+Desktop		Downloads	Movies		Pictures	tmp1
+Documents	Library		Music		Public
+ki@kenoMacBook-Air ~ % rm tmp1
+ki@kenoMacBook-Air ~ % ls
+Desktop		Downloads	Movies		Pictures
+Documents	Library		Music		Public
